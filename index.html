@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom Styleheet -->
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,100 +26,223 @@
                 <p class="tagline">Personalize & Share Beautiful Wishes</p>
             </header>
 
+            <!-- Sidebar Navigation Tabs -->
+            <nav class="sidebar-tabs" aria-label="Sidebar Navigation">
+                <button type="button" class="tab-btn active" data-tab="tab-content" aria-controls="content-panel" aria-selected="true">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Card Content
+                </button>
+                <button type="button" class="tab-btn" data-tab="tab-style" aria-controls="style-panel" aria-selected="false">
+                    <i class="fa-solid fa-palette"></i> Design & Style
+                </button>
+                <button type="button" class="tab-btn" data-tab="tab-audio" aria-controls="audio-panel" aria-selected="false">
+                    <i class="fa-solid fa-music"></i> Atmosphere
+                </button>
+            </nav>
+
             <main class="controls-form">
-                <!-- Section 1: Template Selection -->
-                <section class="control-group">
-                    <h2 class="section-title"><span class="step-num">1</span> Choose Template</h2>
-                    <div class="templates-grid">
-                        <button type="button" class="template-btn active" id="btn-tmpl-1" data-template="tmpl-1" aria-label="Royal Night Template">
-                            <span class="tmpl-thumb tmpl-thumb-1"></span>
-                            <span class="tmpl-name">Royal Night</span>
-                        </button>
-                        <button type="button" class="template-btn" id="btn-tmpl-2" data-template="tmpl-2" aria-label="Emerald Grace Template">
-                            <span class="tmpl-thumb tmpl-thumb-2"></span>
-                            <span class="tmpl-name">Emerald Grace</span>
-                        </button>
-                        <button type="button" class="template-btn" id="btn-tmpl-3" data-template="tmpl-3" aria-label="Sunset Blessings Template">
-                            <span class="tmpl-thumb tmpl-thumb-3"></span>
-                            <span class="tmpl-name">Sunset Gold</span>
-                        </button>
-                        <button type="button" class="template-btn" id="btn-tmpl-4" data-template="tmpl-4" aria-label="Minimalist Rose Template">
-                            <span class="tmpl-thumb tmpl-thumb-4"></span>
-                            <span class="tmpl-name">Pastel Rose</span>
-                        </button>
-                    </div>
-                </section>
-
-                <!-- Section 2: Personalization -->
-                <section class="control-group">
-                    <h2 class="section-title"><span class="step-num">2</span> Personalization</h2>
-                    
-                    <div class="input-wrapper">
-                        <label for="input-name">Your Name / Family Name</label>
-                        <div class="input-icon-group">
-                            <i class="fa-regular fa-user input-icon"></i>
-                            <input type="text" id="input-name" placeholder="E.g., Ahmad & Family" maxlength="40" value="Ahmad & Family">
+                <!-- Panel 1: Card Content -->
+                <div class="tab-panel active" id="content-panel">
+                    <!-- Section 1: Template Selection -->
+                    <section class="control-group">
+                        <h2 class="section-title"><span class="step-num">1</span> Choose Template</h2>
+                        <div class="templates-grid">
+                            <button type="button" class="template-btn active" id="btn-tmpl-1" data-template="tmpl-1" aria-label="Royal Night Template">
+                                <span class="tmpl-thumb tmpl-thumb-1"></span>
+                                <span class="tmpl-name">Royal Night</span>
+                            </button>
+                            <button type="button" class="template-btn" id="btn-tmpl-2" data-template="tmpl-2" aria-label="Emerald Grace Template">
+                                <span class="tmpl-thumb tmpl-thumb-2"></span>
+                                <span class="tmpl-name">Emerald Grace</span>
+                            </button>
+                            <button type="button" class="template-btn" id="btn-tmpl-3" data-template="tmpl-3" aria-label="Sunset Gold Template">
+                                <span class="tmpl-thumb tmpl-thumb-3"></span>
+                                <span class="tmpl-name">Sunset Gold</span>
+                            </button>
+                            <button type="button" class="template-btn" id="btn-tmpl-4" data-template="tmpl-4" aria-label="Pastel Rose Template">
+                                <span class="tmpl-thumb tmpl-thumb-4"></span>
+                                <span class="tmpl-name">Pastel Rose</span>
+                            </button>
+                            <button type="button" class="template-btn" id="btn-tmpl-5" data-template="tmpl-5" aria-label="Royal Purple Template">
+                                <span class="tmpl-thumb tmpl-thumb-5"></span>
+                                <span class="tmpl-name">Royal Purple</span>
+                            </button>
+                            <button type="button" class="template-btn" id="btn-tmpl-6" data-template="tmpl-6" aria-label="Ivory Gold Template">
+                                <span class="tmpl-thumb tmpl-thumb-6"></span>
+                                <span class="tmpl-name">Ivory Gold</span>
+                            </button>
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="input-wrapper">
-                        <label for="select-greeting-preset">Greeting Phrase</label>
-                        <select id="select-greeting-preset">
-                            <option value="Eid Mubarak" selected>Eid Mubarak (عيد مبارك)</option>
-                            <option value="Kullu 'Am Wa Antum Bi-Khair">Kullu 'Am Wa Antum Bi-Khair (كل عام وأنتم بخير)</option>
-                            <option value="Happy Eid al-Fitr">Happy Eid al-Fitr</option>
-                            <option value="May this Eid bring endless joy and peace to you and your loved ones.">Warm Wishes & Blessings</option>
-                            <option value="custom">✏️ Write Custom Greeting...</option>
-                        </select>
-                    </div>
+                    <!-- Section 2: Personalization -->
+                    <section class="control-group">
+                        <h2 class="section-title"><span class="step-num">2</span> Personalization</h2>
+                        
+                        <div class="input-wrapper">
+                            <label for="input-name">Your Name / Family Name</label>
+                            <div class="input-icon-group">
+                                <i class="fa-regular fa-user input-icon"></i>
+                                <input type="text" id="input-name" placeholder="E.g., Ahmad & Family" maxlength="40" value="Ahmad & Family">
+                            </div>
+                        </div>
 
-                    <div class="input-wrapper hidden" id="custom-greeting-wrapper">
-                        <label for="input-custom-greeting">Custom Greeting</label>
-                        <textarea id="input-custom-greeting" placeholder="Type your custom blessing here..." maxlength="120" rows="2"></textarea>
-                    </div>
-                </section>
-
-                <!-- Section 3: Styling -->
-                <section class="control-group">
-                    <h2 class="section-title"><span class="step-num">3</span> Customize Design</h2>
-                    
-                    <div class="input-row">
-                        <div class="input-wrapper half">
-                            <label for="select-font">Font Style</label>
-                            <select id="select-font">
-                                <option value="Cinzel">Serif (Cinzel)</option>
-                                <option value="Amiri">Arabic Elegance (Amiri)</option>
-                                <option value="Reem Kufi">Arabic Kufi (Reem Kufi)</option>
-                                <option value="Playfair Display">Classic (Playfair)</option>
-                                <option value="Montserrat">Modern (Montserrat)</option>
+                        <div class="input-wrapper">
+                            <label for="select-greeting-preset">Greeting Phrase</label>
+                            <select id="select-greeting-preset">
+                                <option value="Eid Mubarak" selected>Eid Mubarak (عيد مبارك)</option>
+                                <option value="Kullu 'Am Wa Antum Bi-Khair">Kullu 'Am Wa Antum Bi-Khair (كل عام وأنتم بخير)</option>
+                                <option value="Happy Eid al-Fitr">Happy Eid al-Fitr</option>
+                                <option value="May this Eid bring endless joy and peace to you and your loved ones.">Warm Wishes & Blessings</option>
+                                <option value="custom">✏️ Write Custom Greeting...</option>
                             </select>
                         </div>
-                        <div class="input-wrapper half">
-                            <label for="input-font-size">Text Size</label>
-                            <div class="slider-container">
-                                <input type="range" id="input-font-size" min="20" max="80" value="48">
-                                <span id="size-val" class="slider-val">48px</span>
+
+                        <div class="input-wrapper hidden" id="custom-greeting-wrapper">
+                            <label for="input-custom-greeting">Custom Greeting</label>
+                            <textarea id="input-custom-greeting" placeholder="Type your custom blessing here..." maxlength="120" rows="2"></textarea>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Panel 2: Design & Style -->
+                <div class="tab-panel" id="style-panel">
+                    <section class="control-group">
+                        <h2 class="section-title"><i class="fa-solid fa-font"></i> Typography</h2>
+                        
+                        <div class="input-row">
+                            <div class="input-wrapper half">
+                                <label for="select-font">Font Family</label>
+                                <select id="select-font">
+                                    <option value="Cinzel">Serif (Cinzel)</option>
+                                    <option value="Amiri">Arabic Elegance (Amiri)</option>
+                                    <option value="Reem Kufi">Arabic Kufi (Reem Kufi)</option>
+                                    <option value="Playfair Display">Classic (Playfair)</option>
+                                    <option value="Montserrat">Modern (Montserrat)</option>
+                                </select>
+                            </div>
+                            <div class="input-wrapper half">
+                                <label for="input-font-size">Base Size</label>
+                                <div class="slider-container">
+                                    <input type="range" id="input-font-size" min="20" max="80" value="48">
+                                    <span id="size-val" class="slider-val">48px</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="input-wrapper">
-                        <label>Text Color</label>
-                        <div class="color-palette">
-                            <button type="button" class="color-btn active" data-color="#D4AF37" style="background: linear-gradient(135deg, #FFF 0%, #D4AF37 50%, #AA7C11 100%);" aria-label="Premium Gold"></button>
-                            <button type="button" class="color-btn" data-color="#FFFFFF" style="background-color: #FFFFFF;" aria-label="Pure White"></button>
-                            <button type="button" class="color-btn" data-color="#F2C94C" style="background-color: #F2C94C;" aria-label="Sunny Gold"></button>
-                            <button type="button" class="color-btn" data-color="#56CCF2" style="background-color: #56CCF2;" aria-label="Soft Blue"></button>
-                            <button type="button" class="color-btn" data-color="#EB5757" style="background-color: #EB5757;" aria-label="Soft Rose"></button>
-                            <div class="color-picker-wrapper">
-                                <input type="color" id="input-custom-color" value="#D4AF37" aria-label="Custom Color Picker">
-                                <span class="picker-icon"><i class="fa-solid fa-palette"></i></span>
+                        <div class="input-row">
+                            <div class="input-wrapper half">
+                                <label for="input-letter-spacing">Spacing</label>
+                                <div class="slider-container">
+                                    <input type="range" id="input-letter-spacing" min="-5" max="25" value="0">
+                                    <span id="spacing-val" class="slider-val">0px</span>
+                                </div>
+                            </div>
+                            <div class="input-wrapper half">
+                                <label>Alignment</label>
+                                <div class="btn-group-row">
+                                    <button type="button" class="btn-align" id="btn-align-left" data-align="left" aria-label="Align Text Left"><i class="fa-solid fa-align-left"></i></button>
+                                    <button type="button" class="btn-align active" id="btn-align-center" data-align="center" aria-label="Align Text Center"><i class="fa-solid fa-align-center"></i></button>
+                                    <button type="button" class="btn-align" id="btn-align-right" data-align="right" aria-label="Align Text Right"><i class="fa-solid fa-align-right"></i></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <!-- Section 4: Actions -->
+                    <section class="control-group">
+                        <h2 class="section-title"><i class="fa-solid fa-circle-half-stroke"></i> Colors & Stroke</h2>
+                        
+                        <div class="input-wrapper">
+                            <label>Text Color</label>
+                            <div class="color-palette">
+                                <button type="button" class="color-btn active" data-color="#D4AF37" style="background: linear-gradient(135deg, #FFF 0%, #D4AF37 50%, #AA7C11 100%);" aria-label="Premium Gold"></button>
+                                <button type="button" class="color-btn" data-color="#FFFFFF" style="background-color: #FFFFFF;" aria-label="Pure White"></button>
+                                <button type="button" class="color-btn" data-color="#F2C94C" style="background-color: #F2C94C;" aria-label="Sunny Gold"></button>
+                                <button type="button" class="color-btn" data-color="#56CCF2" style="background-color: #56CCF2;" aria-label="Soft Blue"></button>
+                                <button type="button" class="color-btn" data-color="#EB5757" style="background-color: #EB5757;" aria-label="Soft Rose"></button>
+                                <div class="color-picker-wrapper">
+                                    <input type="color" id="input-custom-color" value="#D4AF37" aria-label="Custom Color Picker">
+                                    <span class="picker-icon"><i class="fa-solid fa-palette"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card text borders (stroke) to make it pop! -->
+                        <div class="input-wrapper">
+                            <div class="checkbox-row">
+                                <input type="checkbox" id="check-enable-stroke" checked>
+                                <label for="check-enable-stroke">Enable Outline / Border</label>
+                            </div>
+                        </div>
+
+                        <div class="input-row" id="stroke-controls-row">
+                            <div class="input-wrapper half">
+                                <label for="input-stroke-width">Outline Width</label>
+                                <div class="slider-container">
+                                    <input type="range" id="input-stroke-width" min="1" max="15" value="4">
+                                    <span id="stroke-width-val" class="slider-val">4px</span>
+                                </div>
+                            </div>
+                            <div class="input-wrapper half">
+                                <label for="input-stroke-color">Outline Color</label>
+                                <div class="stroke-color-picker-wrapper">
+                                    <input type="color" id="input-stroke-color" value="#000000" aria-label="Outline Color Picker">
+                                    <span id="stroke-color-hex" class="hex-lbl">#000000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="control-group">
+                        <div class="input-row">
+                            <button type="button" id="btn-reset-coords" class="btn btn-secondary btn-block">
+                                <span class="btn-icon"><i class="fa-solid fa-arrows-to-dot"></i></span>
+                                Reset Text Positions
+                            </button>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Panel 3: Atmosphere -->
+                <div class="tab-panel" id="audio-panel">
+                    <section class="control-group">
+                        <h2 class="section-title"><i class="fa-solid fa-music"></i> Ambient Atmosphere</h2>
+                        <p class="section-desc">Enable a soft, peaceful synthesized background atmosphere ( Ney / Oud harmonies) that generates completely client-side in real-time while you build your card!</p>
+
+                        <div class="audio-control-card">
+                            <div class="speaker-animation-container">
+                                <button type="button" id="btn-audio-toggle" class="audio-play-btn" aria-label="Play Background Chimes">
+                                    <span class="play-icon"><i class="fa-solid fa-play"></i></span>
+                                    <span class="pause-icon hidden"><i class="fa-solid fa-pause"></i></span>
+                                </button>
+                                <div class="sound-waves" id="sound-waves-indicator">
+                                    <span class="stroke"></span>
+                                    <span class="stroke"></span>
+                                    <span class="stroke"></span>
+                                    <span class="stroke"></span>
+                                    <span class="stroke"></span>
+                                </div>
+                            </div>
+
+                            <div class="audio-volume-controls">
+                                <div class="volume-row">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                    <input type="range" id="input-audio-volume" min="0" max="100" value="50" aria-label="Volume Slider">
+                                    <span id="audio-volume-val" class="slider-val">50%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="select-audio-harmony">Harmony Presets</label>
+                            <select id="select-audio-harmony">
+                                <option value="ney" selected>Peaceful Ney scale (Pentatonic)</option>
+                                <option value="oud">Warm Oud scale (Minor Phrygian)</option>
+                                <option value="ambient">Cosmic Ambient Space Pad</option>
+                            </select>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Global Download Action Buttons -->
                 <section class="actions-group">
                     <button type="button" id="btn-download" class="btn btn-primary btn-block">
                         <span class="btn-icon"><i class="fa-solid fa-arrow-down-to-bracket"></i></span>
